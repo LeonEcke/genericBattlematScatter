@@ -1,6 +1,6 @@
-diagonal = 25;
+apothem = 25 / 2;
+diagonal = apothem * 2.3094;
 halfDiagonal = diagonal / 2;
-apothem = diagonal * 0.433;
 point = halfDiagonal * 0.25;
 flat = halfDiagonal - point;
 sideTranslation = halfDiagonal + point*2;
