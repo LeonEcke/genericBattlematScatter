@@ -51,13 +51,13 @@ module fullBig(h = 10){
     translate([0, 0, 0]) single(h);
 }
 
-translate([65 * 0, 0, 0]) single(); 
-translate([65 * 1, 0, 0]) double(); 
-translate([65 * 2, 0, 0]) triple(); 
-translate([65 * 3, 0, 0]) quintuple(); 
-translate([65 * 4, 0, 0]) fullBig(); 
+translate([65 * 0, 0, 0]) triple();
+// translate([65 * 1, 0, 0]) double();
+// translate([65 * 2, 0, 0]) triple();
+// translate([65 * 3, 0, 0]) quintuple();
+// translate([65 * 4, 0, 0]) fullBig();
 
-translate([65 * 0, 70, 0]) triCurve(); 
-translate([65 * 1, 70, 0]) quadCurve();
-translate([65 * 2, 70, 0]) quintCurve();
-translate([65 * 3, 70, 0]) fullCurve();
+// translate([65 * 0, 70, 0]) triCurve();
+// translate([65 * 1, 70, 0]) quadCurve();
+// translate([65 * 2, 70, 0]) quintCurve();
+// translate([65 * 3, 70, 0]) fullCurve();
