@@ -9,12 +9,22 @@ module cap(height, length, thickness) {
         sphere(d = thickness);
 }
 
+module foot(width = 2, length = 6, height = 0.5) {
+    linear_extrude(height = height, center = false){
+        square(size = [length - width, width], center = true);
+        translate([ (length-width) / 2, 0, 0]) circle(d = width);
+        translate([-(length-width) / 2, 0, 0]) circle(d = width);
+    }
+}
+
 module wall(height = 10, length = 20, thickness = 2) {
     // Main wall portion
     translate([ - thickness / 2, 0, 0 ])
         cube([thickness, length - thickness, height - thickness / 2]);
-    // TODO: Add feet
-
+    // Add feet
+    footWidth = 2;
+    translate([0, length - thickness * 2, 0]) foot(footWidth);
+    translate([0, thickness, 0]) foot(footWidth);
     // Add rounded top
     translate([0 , 0, height - thickness / 2]) rotate([-90, 0, 0]) 
             cylinder(h = length - thickness, d = thickness);
@@ -24,3 +34,4 @@ module wall(height = 10, length = 20, thickness = 2) {
 }
 
 wall(10, 20);
+//foot();
