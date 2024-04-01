@@ -23,8 +23,13 @@ module wall(height = 10, length = 20, thickness = 2) {
         cube([thickness, length - thickness, height - thickness / 2]);
     // Add feet
     footWidth = 2;
-    translate([0, length - thickness * 2, 0]) foot(footWidth);
-    translate([0, thickness, 0]) foot(footWidth);
+    if (length < 15) {
+        translate([0, length/2 - thickness / 2, 0]) foot(footWidth);
+    }
+    else {
+        translate([0, length - thickness * 2, 0]) foot(footWidth);
+        translate([0, thickness, 0]) foot(footWidth);
+    }
     // Add rounded top
     translate([0 , 0, height - thickness / 2]) rotate([-90, 0, 0]) 
             cylinder(h = length - thickness, d = thickness);
@@ -34,4 +39,5 @@ module wall(height = 10, length = 20, thickness = 2) {
 }
 
 wall(10, 20);
+rotate(a = 180-45) wall(height = 5, length = 10, thickness = 2); 
 //foot();
