@@ -28,7 +28,7 @@ module wall(height = 10, length = 20, thickness = 2, opening = 0) {
             translate([0 , 0, height - thickness / 2]) rotate([-90, 0, 0]) 
                 cylinder(h = length - thickness, d = thickness);
         }
-        // Add opening if 'opening = true'
+        // Add opening if the wall has an opening
         if( opening > 0){
             translate([-thickness/2-1, length/2 - opening/2 - thickness/2, 2])
                 cube([
@@ -38,7 +38,7 @@ module wall(height = 10, length = 20, thickness = 2, opening = 0) {
                 ]);
         }
     };
-    
+
 
     // Add rounded ends
     cap(height, length, thickness);
